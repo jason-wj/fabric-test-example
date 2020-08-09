@@ -21,11 +21,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.jason.fabric</groupId>
-            <artifactId>pool</artifactId>
-            <scope>system</scope>
+            <groupId>io.github.jason-wj</groupId>
+            <artifactId>fabric-cache-java</artifactId>
             <version>1.0</version>
-            <systemPath>${project.basedir}/lib/fabric-pool-java-1.0.jar</systemPath>
         </dependency>
 
         <!-- fabric-pool-java-1.0.jar需要用到的依赖 -->

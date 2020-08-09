@@ -29,25 +29,6 @@ public class PoolController {
 	 */
 	@RequestMapping("/putWallet")
 	public String  putWallet(@RequestBody ReqWallet reqWallet){
-		String certificate = "-----BEGIN CERTIFICATE-----\n" +
-				"MIICKjCCAdCgAwIBAgIQYEUiWZa2R7Qn7VjhsxTxRDAKBggqhkjOPQQDAjBzMQsw\n" +
-				"CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\n" +
-				"YW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu\n" +
-				"b3JnMS5leGFtcGxlLmNvbTAeFw0yMDA4MDExMzI5MDBaFw0zMDA3MzAxMzI5MDBa\n" +
-				"MGwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T\n" +
-				"YW4gRnJhbmNpc2NvMQ8wDQYDVQQLEwZjbGllbnQxHzAdBgNVBAMMFlVzZXIxQG9y\n" +
-				"ZzEuZXhhbXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATLUNsFGVZk\n" +
-				"07cvM4EkzsUgKAnKAKhiV390hHQzPRV3cWkbqm4MeLecBD84u8rzHaGK3FbXrAjt\n" +
-				"sB8SsRUmLI4Xo00wSzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADArBgNV\n" +
-				"HSMEJDAigCC1JvTNIF9HhMBVm+aQ7cD9ZQUnq5xiiUmDnPzCAIykKTAKBggqhkjO\n" +
-				"PQQDAgNIADBFAiEA+KC0MGSRh8hOUkXMVxQ3oeVMQXHgwsPAqqiXEenk+6MCIBLd\n" +
-				"yaRSJluBnryyOkfTQGqAprm/UKOKcJwG6K6JZZ//\n" +
-				"-----END CERTIFICATE-----";
-		String privateKey = "-----BEGIN PRIVATE KEY-----\n" +
-				"MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgBu5VYPEcNhqGx8rv\n" +
-				"PrX+xxGZ96nZobAkWMFCsGhnmJmhRANCAATLUNsFGVZk07cvM4EkzsUgKAnKAKhi\n" +
-				"V390hHQzPRV3cWkbqm4MeLecBD84u8rzHaGK3FbXrAjtsB8SsRUmLI4X\n" +
-				"-----END PRIVATE KEY-----";
 		try {
 			return WalletUtil.getInstance().putWallet(reqWallet.getWalletName(),reqWallet.getMspId(),reqWallet.getCertificate(),reqWallet.getPrivateKey()).getMspId();
 		} catch (IOException | InvalidKeyException | CertificateException e) {
